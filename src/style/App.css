@@ -1,0 +1,388 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root{
+  --cream:#FDEF96;
+  --green-line:#2B580C;
+  --orange-button:#F7B71D;
+  --green-title:#62AE37;
+
+
+}
+
+body {
+  background-color: var(--cream);
+}
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+main{
+  margin: 0 auto;
+  max-width: 1000px;
+  min-height: 100vh;
+  padding: 64px 0
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-page__main{
+  width: 500px;
+  height: 300px;
+  border: 2px  solid var(--green-line);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.login-page__main form {
+  background-color: white;
+}
+
+.login-page__main .form {
+  background-color: white;
+}
+
+.login-page__main .form-label {
+  background-color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.register-page__main{
+  width: 500px;
+  height: 350px;
+  border: 2px  solid var(--green-line);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.register-page__main form {
+  background-color: white;
+}
+
+.register-page__main .form {
+  background-color: white;
+}
+
+.register-page__main .form-label {
+  background-color: white;
+  font-weight: bold;
+}
+
+.navbar{
+  padding-block: 1rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+}
+
+.navbar .text-logo h1{
+  font-family: "Titan One", sans-serif;
+  color: white;
+  text-shadow: 
+        -3px -3px 0 var(--green-title),  
+        3px -3px 0 var(--green-title),
+        -3px 3px 0 var(--green-title),
+        3px 3px 0 var(--green-title);
+}
+
+.navbar .text-logo .talk{
+  font-family: "Titan One", sans-serif;
+  color: var(--orange-button);
+  text-shadow: 
+        -3px -3px 0 var(--green-title),  
+        3px -3px 0 var(--green-title),
+        -3px 3px 0 var(--green-title),
+        3px 3px 0 var(--green-title);
+}
+
+.navbar .navlink ul {
+  padding-left: 0;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  gap: 1rem 1rem;
+}
+
+.navbar .navlink ul li {
+  list-style-type: none;
+}
+
+.navbar .navlink ul li a {
+  font-family: "Signika", sans-serif;
+  color: var(--green-title);
+  font-size: 25px;
+  padding-top: 6px;
+}
+
+.navbar .navlink ul li .btn {
+  font-family: "Signika", sans-serif;
+  color: var(--green-title);
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.add-talk-page{
+  padding: 10px;
+}
+
+.add-talk-page .input-body{
+  border-radius: 4px;
+  width: calc(100% - 20px); 
+  margin: 10px 0;
+  min-height: 100px;
+  padding: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.add-talk-page .input-title,
+.input-category{
+  width: calc(100% - 20px); 
+  padding: 10px;
+  border-radius: 5px; 
+  border: 1px solid #ccc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px; 
+  background-color: white;
+}
+
+.add-talk-page button {
+  width: calc(100% - 20px); 
+  padding: 10px;
+  font-family: 'Signika', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.category{
+  width: calc(100% - 20px); 
+  margin-top: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.category h3{
+  color: var(--green-title);
+}
+
+.category .category-list button{
+  margin: 5px;
+  border: 3px solid var(--green-title);
+}
+
+.talk-list{
+  width: calc(100% - 20px); 
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.talk-list h3{
+  color: var(--green-title);
+}
+
+.talk-item{
+  margin-bottom:10px;
+  background-color: #ffffff; 
+  border-radius: 10px; 
+  padding: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.talk-item .talk-item-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.talk-item-header .talk-item-title, .talk-item-time{
+  color: #000000;
+  text-decoration: none;
+}
+
+.talk-item .category{
+  border: none;
+}
+
+.talk-item-body{
+  margin-left: 10px;
+}
+
+.talk-item-footer .talk-item-vote{
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  background-color: white;
+}
+
+.talk-item-vote{
+  display: flex;
+  align-items: center;
+}
+
+.talk-item-vote .talk-upVote, .talk-downVote{
+  border: none;
+  font-size: 20px;
+  background-color: #ffffff;
+}
+
+.talk-item-vote .talk-total-comments {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.talkItem-user-info{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.talkItem-user-info img{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.talkItem-user{
+  padding-top: 15px;
+}
+
+.talk-detail{
+  margin-bottom:10px;
+  background-color: #ffffff; 
+  border-radius: 10px; 
+  padding: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-detail{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.user-info-detail img{
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info-detail .talkItem-user{
+  font-size: 25px;
+}
+
+.talk-detail-content .talk-item-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.talk-item-header .talk-item-title{
+  margin-left: 10px;
+}
+
+.talk-item-body{
+  padding-left: 10px;
+}
+
+.input-field{
+  border-radius: 5px;
+  margin: 10px 0;
+  min-height: 100px;
+  padding: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.comment-input button {
+  width: 100%; 
+  padding: 10px;
+  font-family: 'Signika', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.comment-item{
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom:10px;
+}
+
+.own-profile-comment{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.own-profile-comment .name-owner{
+  display: flex;
+  padding: 5px;
+}
+
+.own-profile-comment .name-owner img{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-item .talk-item-body, .talk-item-footer{
+ padding-left: 20px;
+}
+
+
+.leaderboard-item{
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0,0,0,.1);
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.leaderboard-item .user-info{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.leaderboard-item .user-info img{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.title-leaderboards{
+  text-align: center;
+  color: var(--green-title);
+  font-weight: bold;
+}
