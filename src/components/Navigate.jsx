@@ -14,7 +14,6 @@ function Navigate({ signOut }) {
       <div className="navlink">
         <ul>
           <li>
-
             <Link className="nav-link active" aria-current="page" to="/">
               Thread 
             </Link>
@@ -23,6 +22,9 @@ function Navigate({ signOut }) {
             <Link className="nav-link" to="/leaderboards">
               Leaderboard
             </Link>
+          </li>
+          <li>
+            <p>Nisrina</p>
           </li>
           <li>
             <button onClick={() => signOut()} type="button" className="btn btn-link">
