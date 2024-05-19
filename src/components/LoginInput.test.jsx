@@ -9,7 +9,14 @@
 
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, it, expect, assert, afterEach, vi } from 'vitest';
+import { 
+  describe, 
+  it, 
+  expect, 
+  assert, 
+  afterEach, 
+  vi, 
+} from 'vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import LoginInput from './LoginInput';
@@ -51,10 +58,14 @@ describe('LoginInput component', () => {
     assert(passwordInput.value === 'test123');
   });
 
-  it ('should call login function when login button is clicked', async () => {
+  it('should call login function when login button is clicked', async () => {
     // Arrange
     const mockLogin = vi.fn();
-    render(<LoginInput login={mockLogin} />);
+    render(
+      <MemoryRouter>
+        <LoginInput login={mockLogin} />
+      </MemoryRouter>,
+    );
     const emailInput = screen.getByPlaceholderText('Enter email');
     await userEvent.type(emailInput, 'test@example.com');
     const passwordInput = screen.getByPlaceholderText('Enter password');

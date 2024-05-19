@@ -40,19 +40,19 @@ function DetailPage() {
   };
 
   const onAddCommentHandler = (content) => {
-    dispatch(asyncAddCommentThreadDetail({ threadId:id, content }));
+    dispatch(asyncAddCommentThreadDetail({ threadId: id, content }));
   };
 
   const onUpVoteCommentHandler = () => {
-    dispatch(asyncUpVoteCommentThreadDetail({ threadId:id, commentId:id }));
+    dispatch(asyncUpVoteCommentThreadDetail({ threadId: id, commentId: id }));
   };
 
   const onDownVoteCommentHandler = () => {
-    dispatch(asyncDownVoteCommentThreadDetail({ threadId:id, commentId:id }));
+    dispatch(asyncDownVoteCommentThreadDetail({ threadId: id, commentId: id }));
   };
 
   const onNeutralVoteCommentHandler = () => {
-    dispatch(asyncNeutralVoteCommentThreadDetail({ threadId:id, commentId:id }));
+    dispatch(asyncNeutralVoteCommentThreadDetail({ threadId: id, commentId: id }));
   };
 
   if (!threadDetail) {

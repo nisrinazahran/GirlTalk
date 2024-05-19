@@ -7,7 +7,7 @@ function Category({ categories }) {
       <h3>Kategori Populer</h3>
       <div className="category-list">
         {categories.map((category) => (
-          <button key={category} className="btn" type="button" >
+          <button key={category} className="btn" type="button">
             {category}
           </button>
         ))}
