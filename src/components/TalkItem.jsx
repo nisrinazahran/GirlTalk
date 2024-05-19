@@ -34,9 +34,10 @@ function TalkItem({
         </h4>
         <span className="talk-item-time">{postedAt(createdAt)}</span>
       </header>
-      <div className="talk-item-body">
-        {body}
-      </div>
+      <div
+        className="talk-item-body"
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
       <footer className="talk-item-footer">
         <div className="talk-item-vote">
           <Vote

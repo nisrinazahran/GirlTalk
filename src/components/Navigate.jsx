@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Navigate({ signOut }) {
   return (
@@ -13,14 +14,15 @@ function Navigate({ signOut }) {
       <div className="navlink">
         <ul>
           <li>
-            <a className="nav-link active" aria-current="page" href="/">
-              Thread
-            </a>
+
+            <Link className="nav-link active" aria-current="page" to="/">
+              Thread 
+            </Link>
           </li>
           <li>
-            <a className="nav-link" href="/leaderboards">
+            <Link className="nav-link" to="/leaderboards">
               Leaderboard
-            </a>
+            </Link>
           </li>
           <li>
             <button onClick={() => signOut()} type="button" className="btn btn-link">
