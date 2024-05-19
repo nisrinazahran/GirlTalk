@@ -14,7 +14,6 @@ function Navigate({ signOut }) {
       <div className="navlink">
         <ul>
           <li>
-
             <Link className="nav-link active" aria-current="page" to="/">
               Thread 
             </Link>
