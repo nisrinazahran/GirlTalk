@@ -5,9 +5,12 @@
  *  - should return the initial state when given by unknown action
  *  - should return the threads when given by RECEIVE_THREADS action
  *  - should return the threads with the new thread when given by ADD_THREAD action
- *  - should return the threads with the toggled like thread when given by TOGGLE_UP_VOTE_THREAD action
- *  - should return the threads with the toggled like thread when given by TOGGLE_DOWN_VOTE_THREAD action
- *  - should return the threads with the toggled like thread when given by TOGGLE_NEUTRAL_VOTE_THREAD action
+ *  - should return the threads with the toggled like thread when given by 
+ *    TOGGLE_UP_VOTE_THREAD action
+ *  - should return the threads with the toggled like thread when given by 
+ *    TOGGLE_DOWN_VOTE_THREAD action
+ *  - should return the threads with the toggled like thread when given by 
+ *    TOGGLE_NEUTRAL_VOTE_THREAD action
  *
  */
 
@@ -57,16 +60,16 @@ describe('threadReducers function', () => {
         ],
       },
     };
-    //action
+    // action
     const nextState = threadsReducer(initialState, action);
 
-    //assert
+    // assert
     expect(nextState).toEqual(action.payload.threads);
   });
 
   it('should return the threads with the new thread when given by ADD_THREAD action', () => {
-    //arrange
-    let initialState = [
+    // arrange
+    const initialState = [
       {
         id: 'thread-1',
         title: 'Thread testing pertama',
@@ -97,17 +100,17 @@ describe('threadReducers function', () => {
       },
     };
 
-    //action
+    // action
     const nextState = threadsReducer(initialState, action);
 
-    //assert
+    // assert
     expect(nextState).toEqual([action.payload.thread, ...initialState]);
   });
 
   it('should return the threads with the toggled like thread when given by TOGGLE_UP_VOTE_THREAD action', () => {
-    //arrange
-    let initialState=[
-         {
+    // arrange
+    const initialState = [
+      {
         id: 'thread-1',
         title: 'Thread Pertama',
         body: 'Ini adalah thread pertama',
@@ -128,7 +131,7 @@ describe('threadReducers function', () => {
       },
     };
 
-     // action: up vote thread
+    // action: up vote thread
     const nextState = threadsReducer(initialState, action);
 
     // assert
@@ -141,9 +144,9 @@ describe('threadReducers function', () => {
   });
 
   it('should return the threads with the toggled like thread when given by TOGGLE_DOWN_VOTE_THREAD action', () => {
-    //arrange
-    let initialState=[
-         {
+    // arrange
+    const initialState = [
+      {
         id: 'thread-1',
         title: 'Thread Pertama',
         body: 'Ini adalah thread pertama',
@@ -164,7 +167,7 @@ describe('threadReducers function', () => {
       },
     };
 
-     // action: up vote thread
+    // action: up vote thread
     const nextState = threadsReducer(initialState, action);
 
     // assert
@@ -177,9 +180,9 @@ describe('threadReducers function', () => {
   });
 
   it('should return the threads with the toggled like thread when given by TOGGLE_NEUTRAL_VOTE_THREAD action', () => {
-    //arrange
-    let initialState=[
-         {
+    // arrange
+    const initialState = [
+      {
         id: 'thread-1',
         title: 'Thread Pertama',
         body: 'Ini adalah thread pertama',
@@ -200,7 +203,7 @@ describe('threadReducers function', () => {
       },
     };
 
-     // action: up vote thread
+    // action: up vote thread
     const nextState = threadsReducer(initialState, action);
 
     // assert
@@ -211,5 +214,4 @@ describe('threadReducers function', () => {
       },
     ]);
   });
-  
 });

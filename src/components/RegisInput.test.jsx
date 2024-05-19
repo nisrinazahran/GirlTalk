@@ -10,7 +10,14 @@
 
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, it, expect, assert, afterEach, vi } from 'vitest';
+import { 
+  describe, 
+  it, 
+  expect, 
+  assert, 
+  afterEach, 
+  vi, 
+} from 'vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import RegisInput from './RegisInput';
@@ -21,7 +28,7 @@ describe('RegisInput component', () => {
   });
 
   it('should handle name typing correctly', async () => {
-    //Arrange
+    // Arrange
     render(
       <MemoryRouter>
         <RegisInput register={() => {}} />
@@ -30,10 +37,10 @@ describe('RegisInput component', () => {
 
     const nameInput = screen.getByPlaceholderText('Enter name');
 
-    //action
+    // action
     await userEvent.type(nameInput, 'nisrina');
 
-    //assert
+    // assert
     assert(nameInput.value === 'nisrina');
   });
 
@@ -70,7 +77,7 @@ describe('RegisInput component', () => {
   });
 
   it('should call register function when register button is clicked', async () => {
-    //Arrange
+    // Arrange
     const mockRegis = vi.fn();
     render(<RegisInput register={mockRegis} />);
 
@@ -81,15 +88,15 @@ describe('RegisInput component', () => {
     const passwordInput = screen.getByPlaceholderText('Enter password');
     await userEvent.type(passwordInput, 'test123');
 
-    //action
+    // action
     const registerButton = screen.getByRole('button', { name: /register/i });
     await userEvent.click(registerButton);
 
-    //assert
+    // assert
     expect(mockRegis).toBeCalledWith({
-        name: 'nisrina',
-        email: 'nisrina@example.com',
-        password: 'test123',
+      name: 'nisrina',
+      email: 'nisrina@example.com',
+      password: 'test123',
     });
   });
 });

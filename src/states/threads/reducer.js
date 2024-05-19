@@ -30,21 +30,19 @@ function threadsReducer(threads = [], action = {}) {
         }
         return thread;
       });
-      case ActionType.TOGGLE_NEUTRAL_VOTE_THREAD:
-        return threads.map((thread) => {
-          if (thread.id === action.payload.threadId) {
-            const neutralVotesBy = thread.neutralVotesBy || []; 
-            return {
-              ...thread,
-              neutralVotesBy: neutralVotesBy.includes(action.payload.userId)
-                ? neutralVotesBy.filter((id) => id !== action.payload.userId)
-                : neutralVotesBy.concat(action.payload.userId),
-            };
-          }
-          return thread;
-        });
-      
-
+    case ActionType.TOGGLE_NEUTRAL_VOTE_THREAD:
+      return threads.map((thread) => {
+        if (thread.id === action.payload.threadId) {
+          const neutralVotesBy = thread.neutralVotesBy || [];
+          return {
+            ...thread,
+            neutralVotesBy: neutralVotesBy.includes(action.payload.userId)
+              ? neutralVotesBy.filter((id) => id !== action.payload.userId)
+              : neutralVotesBy.concat(action.payload.userId),
+          };
+        }
+        return thread;
+      });
     default:
       return threads;
   }

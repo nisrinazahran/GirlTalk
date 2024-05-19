@@ -31,6 +31,8 @@
         "react/jsx-props-no-spreading": "off",
         "react/jsx-one-expression-per-line":"off",
         "eol-last": "off",
-        "no-trailing-spaces": "off"
+        "no-trailing-spaces": "off",
+        "react/no-danger": "off",
+        " max-len": "off"
     }
 }

@@ -6,7 +6,14 @@
  *  - should dispatch action and call alert correctly when fetching data failed
  */
 
-import { describe, beforeEach, afterEach, it, vi, expect } from 'vitest';
+import {
+  describe, 
+  beforeEach, 
+  afterEach, 
+  it, 
+  vi, 
+  expect,
+} from 'vitest';
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import api from '../../utils/api';
 import { asyncGetLeaderboards, receiveLeaderboardsActionCreator } from './action';
@@ -37,18 +44,18 @@ describe('asyncGetLeaderboards Thunk', () => {
   });
 
   it('should dispatch action correctly when fetching data successs', async () => {
-    //arrange
-    //stub implementation
+    // arrange
+    // stub implementation
 
     api.getLeaderboards = () => Promise.resolve(fakeLeaderboardResponse);
 
-    //mock dispatch
+    // mock dispatch
     const dispatch = vi.fn();
 
-    //action
+    // action
     await asyncGetLeaderboards()(dispatch);
 
-    //assert
+    // assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(
       receiveLeaderboardsActionCreator(fakeLeaderboardResponse),
@@ -57,20 +64,20 @@ describe('asyncGetLeaderboards Thunk', () => {
   });
 
   it('should dispatch action and call alert correctly when fetching data failed', async () => {
-    //arrange
-    //stub implementation
+    // arrange
+    // stub implementation
     api.getLeaderboards = () => Promise.reject(fakeErrorResponse);
 
-    //mock dispatch
+    // mock dispatch
     const dispatch = vi.fn();
 
     // mock alert
     window.alert = vi.fn();
 
-    //action
+    // action
     await asyncGetLeaderboards()(dispatch);
 
-    //assert
+    // assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
     expect(window.alert).toHaveBeenCalledWith(fakeErrorResponse.message);

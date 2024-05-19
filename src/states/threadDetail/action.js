@@ -166,7 +166,7 @@ function asyncAddCommentThreadDetail({ threadId, content = '' }) {
   };
 }
 
-function asyncUpVoteCommentThreadDetail( threadId, commentId) {
+function asyncUpVoteCommentThreadDetail(threadId, commentId) {
   return async (dispatch, getState) => {
     dispatch(showLoading());
     const { authUser } = getState();
