@@ -24,9 +24,6 @@ function Navigate({ signOut }) {
             </Link>
           </li>
           <li>
-            <p>Nisrina</p>
-          </li>
-          <li>
             <button onClick={() => signOut()} type="button" className="btn btn-link">
               Logout
             </button>
