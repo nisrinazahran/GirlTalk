@@ -42,7 +42,7 @@ function RegisInput({ register }) {
       </div>
       <button
         onClick={() => register({ name, email, password })}
-        type="submit"
+        type="button"
         className="btn btn-warning"
       >
         Register
